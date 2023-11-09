@@ -20,8 +20,8 @@ public class Book implements ToBeStored {
         return this.getWriter() + ": " + this.getName();
     }
 
-    //getters and setters
 
+    //getters and setters
 
     public String getWriter() {
         return writer;
