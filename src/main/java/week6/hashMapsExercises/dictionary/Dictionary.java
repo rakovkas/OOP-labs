@@ -7,12 +7,12 @@ public class Dictionary {
 
     private HashMap<String, String> dictionary = new HashMap<>();
 
-    public String translate (String word){
-        return this.dictionary.get(word);
-    }
-
     public void add(String word, String translation){
         this.dictionary.put(word,translation);
+    }
+
+    public String translate(String word){
+        return this.dictionary.get(word);
     }
 
     public int amountOfWords(){

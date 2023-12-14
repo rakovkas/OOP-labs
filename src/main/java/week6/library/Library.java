@@ -23,7 +23,7 @@ public class Library extends StringUtils{
     public ArrayList<Book> searchByTitle(String title){
         ArrayList<Book> found = new ArrayList<Book>();
         for (Book book : library){
-            if (StringUtils.included(book.title(), title)){
+            if (Library.included(book.title(), title)){
                 found.add(book);
             }
         }
@@ -33,7 +33,7 @@ public class Library extends StringUtils{
     public ArrayList<Book> searchByPublisher (String publisher){
         ArrayList<Book> found = new ArrayList<Book>();
         for (Book book : library){
-            if (StringUtils.included(book.publisher(), publisher)){
+            if (Library.included(book.publisher(), publisher)){
                 found.add(book);
             }
         }
