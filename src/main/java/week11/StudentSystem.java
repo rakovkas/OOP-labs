@@ -51,5 +51,30 @@ public class StudentSystem {
         return Optional.empty();
     }
 
+    public Student getHighestGPAStudent (){
+        if (students.isEmpty())
+            throw new EmptyStudentListException("List of students is empty");
+
+        Student highestGPAStudnet = this.students.get(0);
+        for (Student s : this.students ){
+            if (s.getGPA() > highestGPAStudnet.getGPA())
+                highestGPAStudnet = s;
+        }
+        return highestGPAStudnet;
+    }
+
+    public Student getLongestNameStudent (){
+        if (this.students.isEmpty())
+            throw new EmptyStudentListException("List of students is empty.");
+
+        Student longestNameStudnet = this.students.get(0);
+        for (Student student : this.students){
+            if (student.getName().length() > longestNameStudnet.getName().length()){
+                longestNameStudnet = student;
+            }
+        }
+        return longestNameStudnet;
+    }
+
 
 }

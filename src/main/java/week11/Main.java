@@ -7,14 +7,19 @@ public class Main {
         StudentSystem studentSystem = new StudentSystem("students.csv");
 
         for (Student student : studentSystem.students){
-            student.toString();
+            System.out.println(student);
         }
 
-        Optional<Student> s = studentSystem.getStudentById(10);
+        try {
+            Optional<Student> student = studentSystem.getStudentById(10);
+            System.out.println(student.orElseThrow(
+                    () ->new StudentNotFoundException("Student not found.")));
+        }catch (StudentNotFoundException e){
+            System.out.println(e.getMessage());
+        }
 
-        if (s.isEmpty()){
-            throw new StudentNotFoundException("Student could not be found.");
-        } else
-            System.out.println(s);
+        System.out.println("Student with the highest GPA: " + studentSystem.getHighestGPAStudent());
+        System.out.println("Student with the longest name:" + studentSystem.getLongestNameStudent());
     }
+
 }
