@@ -22,7 +22,7 @@ public class Events {
             int userID = random.nextInt(1000);
 
             bufferedWriter.write(timestamp + ", " + eventType + ", " + userID);
-            bufferedWriter.newLine(); //do not forget this one
+           bufferedWriter.newLine(); //do not forget this one
         }
 
         bufferedWriter.close();
